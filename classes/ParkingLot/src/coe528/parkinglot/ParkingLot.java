@@ -29,9 +29,20 @@ public class ParkingLot {
         parkinglot.mainLot.getAvailableCapacity();
         
         Space tempSpace = parkinglot.mainLot.entrance1.chooseAnEmptySpace("compact");
-        
         Ticket johnTicket = parkinglot.mainLot.entrance1.createNewTicket(tempSpace, "John", 0);
+       
+        parkinglot.mainLot.getAvailableCapacity();
+        
+        System.out.println("John's Ticket after 5 hours is $"+johnTicket.calculateCost(5));
+        
+        System.out.println("John can leave: " + johnTicket.canLeave());
+        
+        parkinglot.mainLot.exit1.payForTicket(johnTicket, "cash");
+        System.out.println("John paid in cash");
+
+        System.out.println("John can leave: " + johnTicket.canLeave());
         
         parkinglot.mainLot.getAvailableCapacity();
+        
     }
 }

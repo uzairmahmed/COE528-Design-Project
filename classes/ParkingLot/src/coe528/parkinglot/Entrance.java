@@ -20,7 +20,10 @@ public class Entrance {
     }
     
     public Ticket createNewTicket(Space space, String customer, int time){
-        Ticket ticket = new Ticket(space, customer, time);
-        return ticket;
+        if (space != null){
+            Ticket ticket = new Ticket(space, customer, time);
+            return ticket;
+        }
+        else return null;
     }
 }

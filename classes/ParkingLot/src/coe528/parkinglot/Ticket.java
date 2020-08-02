@@ -43,4 +43,8 @@ public class Ticket {
         this.paid=true;
         this.space.setFull(false, this);
     }
+    
+    public boolean canLeave(){
+        return this.paid;
+    }
 }
