@@ -12,6 +12,7 @@ public class Space {
     public Ticket user;
     
     public Space(String type, Floor floor) {
+        this.floor = floor;
         this.type = type;
         this.full = false;
         

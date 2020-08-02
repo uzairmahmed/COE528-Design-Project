@@ -72,7 +72,15 @@ public class Floor {
     
     public int getTotalFloorCapacity() {
         int capacity = 0;
-        for (int cap : floorCapacity){
+        for (int cap : getFloorCapacity()){
+            capacity += cap;
+        }
+        return capacity;
+    }
+    
+    public int getTotalAvailableFloorCapacity() {
+        int capacity = 0;
+        for (int cap : getAvailableFloorCapacity()){
             capacity += cap;
         }
         return capacity;

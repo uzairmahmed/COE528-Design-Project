@@ -47,6 +47,14 @@ public class Lot {
         }
         return capacity;
     }
+    
+    public int getTotalAvailableCapacity() {
+        int capacity = 0;
+        for (Floor f : floors){
+            capacity += f.getTotalAvailableFloorCapacity();
+        }
+        return capacity;
+    }
 
     public int[] getCapacity() {
         int[] capacity = new int[5];
@@ -70,7 +78,7 @@ public class Lot {
                 capacity[i] += temp [i];
             }
         }
-        System.out.println("Available Parking Spaces :" + arrayToString(capacity) + " TOTAL CAPACITY: " + getTotalCapacity());
+        System.out.println("Available Parking Spaces :" + arrayToString(capacity) + " TOTAL CAPACITY: " + getTotalAvailableCapacity());
         return capacity;
     }
 

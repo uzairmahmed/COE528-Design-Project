@@ -5,20 +5,21 @@ package coe528.parkinglot;
  * @author uzair
  */
 public class Ticket {
-    public int spaceID;
-    public int floorID;
+    public Space space;
     public String customerName;
     public int timeStarted;
     public double cost = 0;
     public double extraCosts = 0;
     public boolean paid;
 
-    public Ticket(int floorID, int spaceID, String customerName, int timeStarted) {
-        this.floorID = floorID;
-        this.spaceID = spaceID;
+    public Ticket(Space space, String customerName, int timeStarted) {
+        this.space = space;
         Lot.getInstance().totalNumTickets++;
         this.customerName = customerName;
         this.timeStarted = timeStarted;
+        this.space.setFull(true, this);
+        
+        System.out.println("Made a ticket for "+customerName+ " in " + String.valueOf(space.floor.id) + "-" + String.valueOf(space.id));
     }
     
     public double calculateCost(int timeEnded){
@@ -39,6 +40,7 @@ public class Ticket {
     }
     
     public void payForTicket(String method){
-        this.paid=true;        
+        this.paid=true;
+        this.space.setFull(false, this);
     }
 }

@@ -28,6 +28,10 @@ public class ParkingLot {
         parkinglot.mainLot.getCapacity();        
         parkinglot.mainLot.getAvailableCapacity();
         
-        parkinglot.mainLot.entrance1.chooseAnEmptySpot("compact");
+        Space tempSpace = parkinglot.mainLot.entrance1.chooseAnEmptySpace("compact");
+        
+        Ticket johnTicket = parkinglot.mainLot.entrance1.createNewTicket(tempSpace, "John", 0);
+        
+        parkinglot.mainLot.getAvailableCapacity();
     }
 }
