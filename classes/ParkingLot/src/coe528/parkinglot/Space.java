@@ -17,9 +17,11 @@ public class Space {
         
         this.id = floor.getTotalFloorCapacity()+1;
         
-        floor.spaces.add(this);
+        floor.spaces.get(floor.map.get(this.type)).add(this);
         floor.floorCapacity[floor.map.get(this.type)]++;
         floor.availableFloorCapacity[floor.map.get(this.type)]++;
+        
+//        System.out.print("    Created Space of Type " + type);
 
     }
 

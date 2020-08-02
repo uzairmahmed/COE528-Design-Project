@@ -13,6 +13,6 @@ public class Exit {
     }
     
     public void payForTicket(Ticket customer, String method){
-        customer.payForTicket(method);
+        customer.payForTicket(method); 
     }
 }
