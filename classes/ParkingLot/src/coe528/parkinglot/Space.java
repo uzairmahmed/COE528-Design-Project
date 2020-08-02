@@ -5,21 +5,30 @@ package coe528.parkinglot;
  * @author uzair
  */
 public class Space {
+    public Floor floor;
+    public int id;
     public String type;
-    public String status;
+    public boolean full;
     public Ticket user;
     
-    public Space(String type) {
+    public Space(String type, Floor floor) {
         this.type = type;
+        this.full = false;
+        
+        this.id = floor.getTotalFloorCapacity()+1;
+        
+        floor.spaces.add(this);
+        floor.floorCapacity[floor.map.get(this.type)]++;
+        floor.availableFloorCapacity[floor.map.get(this.type)]++;
+
     }
 
-    public String getStatus() {
-        return status;
+    public boolean isFull() {
+        return full;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    
-    
+    public void setFull(boolean value, Ticket user) {
+        this.full = value;
+        this.user = user;
+    }    
 }

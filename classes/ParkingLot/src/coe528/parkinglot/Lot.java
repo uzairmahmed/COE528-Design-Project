@@ -7,31 +7,30 @@ import java.util.ArrayList;
  * @author uzair
  */
 public class Lot {
+    public int totalNumTickets;
+    
     public int numFloors;
     public ArrayList<Floor> floors = new ArrayList();
     
     public int totalCapacity;
     public int availableCapacity;
+    
+    private static Lot instance = null;
 
     private Lot() {
+        this.totalNumTickets = 0;  
+        this.numFloors = 0;
     }
-    
-    public static class LotHolder {
-        private static final Lot INSTANCE = new Lot(); //Need to find a way to choose number of floors here
-    }
-    
+
     public static Lot getInstance(){
-        return LotHolder.INSTANCE;
+        if (instance == null) instance = new Lot();
+        return instance;
     }
-    
-    
     
     public void createFloor(int compactSlots, int largeSlots, int handicapSlots, int motorcycleSlots, int EVSlots){
-        //Create a floor with these params.
+        new Floor(compactSlots, largeSlots, handicapSlots, motorcycleSlots, EVSlots);
     }
     
-    
-
     public int getNumFloors() {
         return numFloors;
     }
@@ -40,18 +39,7 @@ public class Lot {
         return totalCapacity;
     }
 
-    public void setTotalCapacity(int totalCapacity) {
-        this.totalCapacity = totalCapacity;
-    }
-
     public int getAvailableCapacity() {
         return availableCapacity;
     }
-
-    public void setAvailableCapacity(int avaiableCapacity) {
-        this.availableCapacity = avaiableCapacity;
-    }
-    
-    
-
 }

@@ -9,10 +9,10 @@ public class Exit {
     }
     
     public double calculateCost(Ticket customer, int time){
-        return 0.0;
+        return customer.calculateCost(time);
     }
     
     public void payForTicket(Ticket customer, String method){
-        
+        customer.payForTicket(method);
     }
 }

@@ -5,11 +5,11 @@ package coe528.parkinglot;
  * @author uzair
  */
 public class EVSpace extends Space{
-    public EVSpace(String type) {
-        super(type);
+    public EVSpace(String type, Floor floor) {
+        super(type, floor);
     }
     
-    public void charge(int time){
-     
+    public void charge(){
+        this.user.extraCosts+=10.00;
     }
 }

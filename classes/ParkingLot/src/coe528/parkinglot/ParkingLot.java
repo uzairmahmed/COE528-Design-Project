@@ -10,7 +10,17 @@ package coe528.parkinglot;
  * @author uzair
  */
 public class ParkingLot {
-    public static void main(String args[]){
+    Lot mainLot;
+    
+    
+    public ParkingLot() {
+        this.mainLot = Lot.getInstance();
+    }
         
+        
+    public static void main(String args[]){
+        ParkingLot parkinglot = new ParkingLot();
+        
+        parkinglot.mainLot.createFloor(10, 20, 40, 10, 1);
     }
 }
