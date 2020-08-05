@@ -99,7 +99,6 @@ public class Floor {
 
     public ArrayList<Space> getSpaces(String type) {
         ArrayList<Space> temp = spaces.get(map.get(type));
-        
         return temp;
     }
     
