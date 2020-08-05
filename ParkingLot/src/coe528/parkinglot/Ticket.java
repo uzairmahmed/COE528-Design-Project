@@ -19,12 +19,10 @@ public class Ticket {
     public boolean paid;
 
     /**
-     * REQUIRES: space is a valid Space Object, timeStarted is a positive integer.
-     * EFFECTS: creates a new Ticket object that is then added to an empty parking space.
-     * MODIFIES: this.space
+     * REQUIRES: space is a valid Space Object, timeStarted is a positive integer.EFFECTS: creates a new Ticket object that is then added to an empty parking space.MODIFIES: this.space
      * @param space
-     * @param customerName
-     * @param timeStarted
+     * @param string
+     * @param i
      */
     public Ticket(Space space, String customerName, int timeStarted) {
         this.identifier = (long) Math.floor(Math.random() * 9_000_000_000L) + 1_000_000_000L;

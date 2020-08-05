@@ -37,10 +37,13 @@ public class Floor {
 
     /**
      *
-     * @param compactSlots
+     * @param i
      * @param largeSlots
      * @param handicapSlots
+     * @param i2
      * @param motorcycleSlots
+     * @param i3
+     * @param i4
      * @param EVSlots
      */
     public Floor(int compactSlots, int largeSlots, int handicapSlots, int motorcycleSlots, int EVSlots) {
