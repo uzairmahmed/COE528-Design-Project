@@ -11,9 +11,19 @@ public class Lot {
     Exit exit1;
     Exit exit2;
     
+    /**
+     *
+     */
     public int totalNumTickets;
     
+    /**
+     *
+     */
     public int numFloors;
+
+    /**
+     *
+     */
     public ArrayList<Floor> floors = new ArrayList();
     
     private static Lot instance = null;
@@ -27,19 +37,39 @@ public class Lot {
         this.numFloors = 0;
     }
 
+    /**
+     *
+     * @return
+     */
     public static Lot getInstance(){
         if (instance == null) instance = new Lot();
         return instance;
     }
     
+    /**
+     *
+     * @param compactSlots
+     * @param largeSlots
+     * @param handicapSlots
+     * @param motorcycleSlots
+     * @param EVSlots
+     */
     public void createFloor(int compactSlots, int largeSlots, int handicapSlots, int motorcycleSlots, int EVSlots){
         new Floor(compactSlots, largeSlots, handicapSlots, motorcycleSlots, EVSlots);
     }
     
+    /**
+     *
+     * @return
+     */
     public int getNumFloors() {
         return numFloors;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getTotalCapacity() {
         int capacity = 0;
         for (Floor f : floors){
@@ -48,6 +78,10 @@ public class Lot {
         return capacity;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getTotalAvailableCapacity() {
         int capacity = 0;
         for (Floor f : floors){
@@ -56,6 +90,10 @@ public class Lot {
         return capacity;
     }
 
+    /**
+     *
+     * @return
+     */
     public int[] getCapacity() {
         int[] capacity = new int[5];
         
@@ -69,6 +107,10 @@ public class Lot {
         return capacity;
     }
     
+    /**
+     *
+     * @return
+     */
     public int[] getAvailableCapacity() {
         int[] capacity = new int[5];
         
@@ -82,7 +124,11 @@ public class Lot {
         return capacity;
     }
 
-    
+    /**
+     *
+     * @param arr
+     * @return
+     */
     public static String arrayToString(int[] arr){
         String txt = "[";
         for (int i : arr){

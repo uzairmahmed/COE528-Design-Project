@@ -9,14 +9,40 @@ import java.util.Map;
  * @author uzair
  */
 public class Floor {
+
+    /**
+     *
+     */
     public ArrayList<ArrayList <Space>> spaces;
     
+    /**
+     *
+     */
     public int id ;
+
+    /**
+     *
+     */
     public int[] floorCapacity;
+
+    /**
+     *
+     */
     public int[] availableFloorCapacity;
     
+    /**
+     *
+     */
     public Map<String, Integer> map = new HashMap<>();
 
+    /**
+     *
+     * @param compactSlots
+     * @param largeSlots
+     * @param handicapSlots
+     * @param motorcycleSlots
+     * @param EVSlots
+     */
     public Floor(int compactSlots, int largeSlots, int handicapSlots, int motorcycleSlots, int EVSlots) {
         this.id = Lot.getInstance().numFloors+1;
         Lot.getInstance().numFloors++;
@@ -58,6 +84,10 @@ public class Floor {
         System.out.println("Created Floor " + String.valueOf(this.id)+ ", Capacity:" + this.arrayToString(floorCapacity) + " TOTAL CAPACITY: " + getTotalFloorCapacity());
     }
     
+    /**
+     *
+     * @param type
+     */
     public void createSpace(String type){
         if (type.equals("electric")){
             new EVSpace("electric", this);
@@ -66,10 +96,18 @@ public class Floor {
         }
     }
     
+    /**
+     *
+     * @return
+     */
     public int[] getFloorCapacity() {
         return floorCapacity;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getTotalFloorCapacity() {
         int capacity = 0;
         for (int cap : getFloorCapacity()){
@@ -78,6 +116,10 @@ public class Floor {
         return capacity;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getTotalAvailableFloorCapacity() {
         int capacity = 0;
         for (int cap : getAvailableFloorCapacity()){
@@ -86,6 +128,10 @@ public class Floor {
         return capacity;
     }
 
+    /**
+     *
+     * @return
+     */
     public int[] getAvailableFloorCapacity() {
         for (ArrayList<Space> t:spaces){
             for(Space s : t){
@@ -97,11 +143,21 @@ public class Floor {
         return availableFloorCapacity;
     }
 
+    /**
+     *
+     * @param type
+     * @return
+     */
     public ArrayList<Space> getSpaces(String type) {
         ArrayList<Space> temp = spaces.get(map.get(type));
         return temp;
     }
     
+    /**
+     *
+     * @param arr
+     * @return
+     */
     public String arrayToString(int[] arr){
         String txt = "[";
         for (int i : arr){

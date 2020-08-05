@@ -37,35 +37,99 @@ import javafx.scene.image.ImageView;
 // Interface and display board launched together
 // Finish interface today and work on display board tomorrow
 
+/**
+ *
+ * @author uzair
+ */
+
 public class Interface extends Application {
     Stage window;
     Scene scene1, scene2, scene3, customerScene, createTicket, createTicket2, createTicket3, payTicket, payTicket1, payTicket2, thankYou, editUser;
+
+    /**
+     *
+     */
     public String userType;
+
+    /**
+     *
+     */
     public int userFloor;
+
+    /**
+     *
+     */
     public Ticket t;
-    public Text Manager1, yourSpot;
+
+    /**
+     *
+     */
+    public Text Manager1,
+
+    /**
+     *
+     */
+    yourSpot;
     GridPane create3 = new GridPane();
+
+    /**
+     *
+     */
     public double cost;
-    public int z = 0, r;     
+
+    /**
+     *
+     */
+    public int z = 0,     
+
+    /**
+     *
+     */
+    r;     
     GridPane payEnd = new GridPane();
+
+    /**
+     *
+     */
     public int n = 2;
     ParkingLot parkinglot;
+
+    /**
+     *
+     */
     public int floor;
+
+    /**
+     *
+     */
     public boolean maxed = true;
     
     //Assuming Parking System has 3 floors 
     //Assuming each parking lot has 5 parking spots on every floor.
+
+    /**
+     *
+     * @param args
+     */
     
     public static void main(String[] args) {
         launch(args);
     }
   
     //Use parameter parking Lot instead of Manager
+
+    /**
+     *
+     * @param parking
+     */
     
     public Interface(ParkingLot parking){
         this.parkinglot = parking;
     }
         
+    /**
+     *
+     */
     public Interface(){
         //Creating new parking Lot with required specs
         parkinglot = new ParkingLot();
@@ -75,6 +139,11 @@ public class Interface extends Application {
         parkinglot.mainLot.createFloor(1, 1, 1, 1, 1);
      }
     
+    /**
+     *
+     * @param primaryStage
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
@@ -827,6 +896,12 @@ public class Interface extends Application {
         window.show();
     }
     
+    /**
+     *
+     * @param user
+     * @param pass
+     * @return
+     */
     public boolean authenticate(TextField user, PasswordField pass){ 
         //if returns true move to next scene
         if("admin".equals(user.getText())){
