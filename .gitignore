@@ -21,6 +21,9 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/classes/ParkingLot/nbproject/private/
-/classes/ParkingLot/build/
-/classes/ParkingLot/dist/
+/ParkingLot/nbproject/private/
+/ParkingLot/build/
+/ParkingLot/dist/
+
+# Videos
+/Video/*

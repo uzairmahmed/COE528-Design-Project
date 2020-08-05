@@ -4,15 +4,10 @@ package coe528.parkinglot;
  * @author uzair
  */
 public class Entrance {
-
-    /**
-     *
-     */
     public Entrance() {
     }
     
     /**
-     *
      * @param type
      * @return
      */
@@ -27,7 +22,6 @@ public class Entrance {
     }
     
     /**
-     *
      * @param space
      * @param customer
      * @param time

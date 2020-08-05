@@ -11,16 +11,11 @@ package coe528.parkinglot;
  */
 public class ParkingLot {
     Lot mainLot;
-    
-    /**
-     *
-     */
     public ParkingLot() {
         this.mainLot = Lot.getInstance();
     }
         
     /**
-     *
      * @param args
      */
     public static void main(String args[]){

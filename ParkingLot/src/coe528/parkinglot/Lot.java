@@ -10,20 +10,8 @@ public class Lot {
     Entrance entrance1;
     Exit exit1;
     Exit exit2;
-    
-    /**
-     *
-     */
     public int totalNumTickets;
-    
-    /**
-     *
-     */
     public int numFloors;
-
-    /**
-     *
-     */
     public ArrayList<Floor> floors = new ArrayList();
     
     private static Lot instance = null;

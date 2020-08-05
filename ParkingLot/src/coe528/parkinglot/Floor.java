@@ -9,30 +9,10 @@ import java.util.Map;
  * @author uzair
  */
 public class Floor {
-
-    /**
-     *
-     */
     public ArrayList<ArrayList <Space>> spaces;
-    
-    /**
-     *
-     */
     public int id ;
-
-    /**
-     *
-     */
     public int[] floorCapacity;
-
-    /**
-     *
-     */
     public int[] availableFloorCapacity;
-    
-    /**
-     *
-     */
     public Map<String, Integer> map = new HashMap<>();
 
     /**

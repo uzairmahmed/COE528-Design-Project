@@ -1,38 +1,16 @@
 package coe528.parkinglot;
 
 /**
- *
  * @author uzair
  */
 public class Space {
-
-    /**
-     *
-     */
     public Floor floor;
-
-    /**
-     *
-     */
     public int id;
-
-    /**
-     *
-     */
     public String type;
-
-    /**
-     *
-     */
     public boolean full;
-
-    /**
-     *
-     */
     public Ticket user;
     
     /**
-     *
      * @param type
      * @param floor
      */
@@ -46,13 +24,9 @@ public class Space {
         floor.spaces.get(floor.map.get(this.type)).add(this);
         floor.floorCapacity[floor.map.get(this.type)]++;
         floor.availableFloorCapacity[floor.map.get(this.type)]++;
-        
-//        System.out.print("    Created Space of Type " + type);
-
     }
 
     /**
-     *
      * @return
      */
     public boolean isFull() {
@@ -60,7 +34,6 @@ public class Space {
     }
 
     /**
-     *
      * @param value
      * @param user
      */
